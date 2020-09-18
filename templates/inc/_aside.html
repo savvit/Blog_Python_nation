@@ -1,0 +1,19 @@
+{% load menu %}
+<aside class="col-lg-4 col-md-12 float-right">
+    <div>
+        <!-- TOP ARTICLES -->
+        <div>
+            <h3 class="badge badge-primary text-wrap top-articles" style="width: 9rem;">Топ статьи</h3>
+        </div>
+
+        {% get_popular 4 %}
+
+
+        <!-- ALL TAGS -->
+        <h3 class="badge badge-primary text-wrap aside-heading mt-3 mb-2 pl-2" style="width: 9rem;">Все
+            теги</h3>
+        <div class="mybadges w-100 shadow-lg p-3 mb-5 bg-light rounded">
+            {% show_tags %}
+        </div>
+    </div>
+</aside>

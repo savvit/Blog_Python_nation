@@ -1,0 +1,3 @@
+{% for tag in tags %}
+<a href="{{ tag.get_absolute_url }}" class="badge badge-danger">{{ tag.title }}</a>
+{% endfor %}

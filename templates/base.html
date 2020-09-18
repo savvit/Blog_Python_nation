@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load compress %}
+{% load static %}
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+          content="Сайт с которым твой опыт в программировании растёт быстрее"/>
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Python nation">
+    <meta name="copyright" content="Виталий Савчук">
+
+    <!-- Bootstrap CSS -->
+        {% compress css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+        {% endcompress %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--    highlight.js-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+    <link rel="shortcut icon" type="image/ico" href="{% static 'favicon.ico' %}">
+    <title>{% block title %}Python nation | Портал для программистов{% endblock title %}</title>
+</head>
+<body>
+
+<div id="intro">
+    <div class="container">
+        <!-- HEADER -->
+        {% include 'inc/_header.html' %}
+        <!-- /HEADER -->
+
+
+        <!-- MAIN -->
+        <main class="pt-5">
+            <!-- ARTICLE -->
+            <article class="pt-4">
+
+                {% block content %}
+
+                {% endblock %}
+
+
+                <!-- ASIDE -->
+                {% include 'inc/_aside.html' %}
+                <!-- /ASIDE -->
+
+
+            </article>
+            <!-- /ARTICLE -->
+
+
+            {% include 'inc/_pagination.html' %}
+
+
+        </main>
+        <!-- /MAIN -->
+    </div>
+    <!-- FOOTER -->
+    {% include 'inc/_footer.html' %}
+
+    <!-- /FOOTER -->
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        {% compress js %}
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="{% static 'js/scroll_to_top.js' %}"></script>
+        {% endcompress %}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+
+    <!--highlight.js-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+</div>
+</body>
+</html>
